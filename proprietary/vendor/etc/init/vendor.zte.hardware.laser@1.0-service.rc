@@ -1,0 +1,14 @@
+service laser-hal-1-0 /vendor/bin/hw/vendor.zte.hardware.laser@1.0-service
+    interface vendor.zte.hardware.laser@1.0::ILaser default
+    class hal
+    user system
+    group system
+    shutdown critical
+
+on property:sys.boot_completed=1
+    mkdir /mnt/vendor/persist/laser 0775 system system
+    chown system system /mnt/vendor/persist/laser/calidata.bin
+    chmod 0644 /mnt/vendor/persist/laser/calidata.bin
+    chown system system /mnt/vendor/persist/laser/calidata.txt
+    chmod 0644 /mnt/vendor/persist/laser/calidata.txt
+
