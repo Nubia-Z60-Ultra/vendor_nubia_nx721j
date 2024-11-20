@@ -2572,4 +2572,9 @@ PRODUCT_PACKAGES += \
     vendor.zte.hardware.laser@1.0-service.xml \
     vendor.zte.radio-manifest-ds.xml \
     vendor.qti.hardware.sigma_miracast.xml \
-    vendor.qti.qesdsys.service.xml
+    vendor.qti.qesdsys.service.xml \
+    tcmiface \
+    QPerformance \
+    tcmclient \
+    telephony-ext \
+    UxPerformance

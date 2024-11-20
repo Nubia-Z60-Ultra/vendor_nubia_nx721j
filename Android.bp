@@ -7,7 +7,6 @@ soong_namespace {
 	],
 }
 
-
 cc_prebuilt_library_shared {
 	name: "libagm",
 	owner: "nubia",
@@ -15,11 +14,12 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm64: {
+		: {
 			srcs: ["proprietary/vendor/lib64/libagm.so"],
 		},
 	},
 	compile_multilib: "64",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -31,7 +31,7 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm64: {
+		: {
 			srcs: ["proprietary/vendor/lib64/libar-pal.so"],
 		},
 	},
@@ -48,11 +48,12 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm64: {
+		: {
 			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so"],
 		},
 	},
 	compile_multilib: "64",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -168,6 +169,24 @@ prebuilt_etc_xml {
 	name: "ImsRtpService-aidl.xml",
 	owner: "nubia",
 	src: "proprietary/vendor/etc/vintf/manifest/ImsRtpService-aidl.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "android.hardware.cas-service.xml",
+	owner: "nubia",
+	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.cas-service.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "android.hardware.drm-service.clearkey.xml",
+	owner: "nubia",
+	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
@@ -447,6 +466,15 @@ prebuilt_etc_xml {
 	name: "dpm-saidl.xml",
 	owner: "nubia",
 	src: "proprietary/vendor/etc/vintf/manifest/dpm-saidl.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "fingerprint-example.xml",
+	owner: "nubia",
+	src: "proprietary/vendor/etc/vintf/manifest/fingerprint-example.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
@@ -938,3 +966,27 @@ prebuilt_etc_xml {
 	system_ext_specific: true,
 }
 
+
+dex_import {
+	name: "tcmiface",
+	owner: "nubia",
+	jars: ["proprietary/system/system/framework/tcmiface.jar"],
+}
+
+dex_import {
+	name: "QPerformance",
+	owner: "nubia",
+	jars:[proprietary/system/system/framework/QPerformance.jar]
+}
+
+dex_import {
+	name: "telephony-ext",
+	owner: "nubia",
+	jars:[proprietary/system/system/framework/telephony-ext.jar]
+}
+
+dex_import {
+	name: "UxPerformance",
+	owner: "nubia",
+	jars:[proprietary/system/system/framework/UxPerformance.jar]
+}
