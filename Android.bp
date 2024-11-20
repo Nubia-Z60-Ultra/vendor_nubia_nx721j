@@ -14,10 +14,9 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		: {
 			srcs: ["proprietary/vendor/lib64/libagm.so"],
 		},
-	},
+
 	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
@@ -31,10 +30,9 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		: {
 			srcs: ["proprietary/vendor/lib64/libar-pal.so"],
 		},
-	},
+
 	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
@@ -48,10 +46,10 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		: {
+
 			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so"],
 		},
-	},
+
 	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
@@ -966,27 +964,26 @@ prebuilt_etc_xml {
 	system_ext_specific: true,
 }
 
-
 dex_import {
 	name: "tcmiface",
 	owner: "nubia",
-	jars: ["proprietary/system/system/framework/tcmiface.jar"],
+	jars: ["proprietary/system/systemframework/tcmiface.jar"],
 }
 
 dex_import {
 	name: "QPerformance",
 	owner: "nubia",
-	jars:[proprietary/system/system/framework/QPerformance.jar]
+	jars: ["proprietary/system/system/framework/tcmiface.jar"],
 }
 
 dex_import {
 	name: "telephony-ext",
 	owner: "nubia",
-	jars:[proprietary/system/system/framework/telephony-ext.jar]
+	jars: ["proprietary/system/system/framework/telephony-ext.jar"],
 }
 
 dex_import {
 	name: "UxPerformance",
 	owner: "nubia",
-	jars:[proprietary/system/system/framework/UxPerformance.jar]
+	jars:["proprietary/system/system/framework/UxPerformance.jar"],
 }
