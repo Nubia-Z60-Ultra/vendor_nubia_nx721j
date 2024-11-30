@@ -1,14 +1,14 @@
 {
   "config":{
     "hw_platform": ["MTP", "Surf", "RCM", "QRD", "HDK"],
-    "soc_id": ["557", "577"]
+    "soc_id": ["457", "482", "519", "557", "577"]
   },
 	"aw9610x_0_sar":{
 		"owner": "sns_aw9610x",
 		".register_b":{
 			"owner": "sns_aw9610x",
 			"check_sum": { "type": "int", "ver": "0",
-			"data": "0x8D9EA7DD"
+			"data": "0x899EA7DD"
 			},
 			"reg_0x0110":{ "type": "int", "ver": "0", "data": "0x0110"},
 			"reg_0x0110_val":{ "type": "int", "ver": "0", "data": "0x00000000"},
@@ -129,7 +129,7 @@
 			"reg_0x0208":{ "type": "int", "ver": "0", "data": "0x0208"},
 			"reg_0x0208_val":{ "type": "int", "ver": "0", "data": "0x0400000A"},
 			"reg_0x020C":{ "type": "int", "ver": "0", "data": "0x020C"},
-			"reg_0x020C_val":{ "type": "int", "ver": "0", "data": "0x0400000B"}
+			"reg_0x020C_val":{ "type": "int", "ver": "0", "data": "0x0000000B"}
 		}
 	}
 }

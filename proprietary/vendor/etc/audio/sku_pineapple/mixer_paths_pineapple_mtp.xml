@@ -182,8 +182,8 @@
     <ctl name="RX_RX0 Digital Volume" value="84" />
     <ctl name="RX_RX1 Digital Volume" value="84" />
     <ctl name="RX_RX2 Digital Volume" value="84" />
-    <ctl name="HPHL Volume" value="9" />
-    <ctl name="HPHR Volume" value="9" />
+    <ctl name="HPHL Volume" value="10" />
+    <ctl name="HPHR Volume" value="10" />
 
     <ctl name="TX_DEC0 Volume" value="84" />
     <ctl name="TX_DEC1 Volume" value="84" />
@@ -210,7 +210,7 @@
 
     <!-- Headphone class-H mode -->
     <ctl name="RX_HPH_PWR_MODE" value="LOHIFI" />
-    <ctl name="RX HPH Mode" value="CLS_H_HIFI" />
+    <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
 
     <!-- IIR/voice anc -->
     <ctl name="IIR0 Band1" value="00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" />
@@ -235,8 +235,6 @@
     <ctl name="WSA_Softclip1 Enable" value="0" />
     <ctl name="WSA_RX INT0 VBAT WSA RX0 VBAT Enable" value="0" />
     <ctl name="WSA_RX INT1 VBAT WSA RX1 VBAT Enable" value="0" />
-
-
 
     <!-- HIFI Filter coefficients for headphones path -->
     <path name="hifi-filter-coefficients">
@@ -350,6 +348,15 @@
         <ctl name="aw_dev_1_prof" value="Music" />
         <ctl name="aw_dev_1_monitor" value="Enable" />
         <ctl name="aw_dev_0_monitor" value="Enable" />
+    </path>
+
+    <path name="speaker-mute">
+        <ctl name="aw_dev_1_switch" value="Disable" />
+        <ctl name="aw_dev_0_switch" value="Disable" />
+        <ctl name="aw_dev_0_prof" value="Music" />
+        <ctl name="aw_dev_1_prof" value="Music" />
+        <ctl name="aw_dev_1_monitor" value="Disable" />
+        <ctl name="aw_dev_0_monitor" value="Disable" />
     </path>
 
     <path name="speaker-prot">
@@ -470,6 +477,7 @@
     </path>
 
     <path name="sidetone-headphones">
+
     </path>
 
     <path name="sidetone-handset">
@@ -571,9 +579,9 @@
     </path>
 
     <path name="handset">
-        <ctl name="aw_dev_0_switch" value="Enable" />
-        <ctl name="aw_dev_1_switch" value="Disable" />
-        <ctl name="aw_dev_0_prof" value="Receiver" />
+        <ctl name="aw_dev_0_switch" value="Disable" />
+        <ctl name="aw_dev_1_switch" value="Enable" />
+        <ctl name="aw_dev_1_prof" value="Receiver" />
     </path>
 
     <path name="handset-mic">
@@ -619,8 +627,8 @@
         <ctl name="HPHR XTALK" value="1" />
         <ctl name="HPHL_RDAC Switch" value="1" />
         <ctl name="HPHR_RDAC Switch" value="1" />
-        <ctl name="RX_RX0 Digital Volume" value="79" />
-        <ctl name="RX_RX1 Digital Volume" value="79" />
+        <ctl name="RX_RX0 Digital Volume" value="76" />
+        <ctl name="RX_RX1 Digital Volume" value="76" />
     </path>
 
     <path name="color-light">
@@ -882,14 +890,8 @@
 
     <path name="va-mic-mono">
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA DEC0 MUX" value="SWR_MIC" />
-        <ctl name="VA_DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="TX0 MODE" value="ADC_LP" />
-        <ctl name="ADC1 MUX" value="CH1_AMIC1" />
-        <ctl name="VA SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="VA_AMIC1_MIXER Switch" value="1" />
+        <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
+        <ctl name="VA DMIC MUX0" value="DMIC0" />
     </path>
 
     <path name="va-mic-dmic">
@@ -901,8 +903,7 @@
         <ctl name="VA_DEC1 MODE" value="ADC_LOW_PWR" />
         <ctl name="TX0 MODE" value="ADC_LP" />
         <ctl name="TX1 MODE" value="ADC_LP" />
-        <ctl name="ADC1 MUX" value="CH1_AMIC1" />
-        <ctl name="ADC2 MUX" value="CH2_AMIC3" />
+        <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="VA SMIC MUX0" value="SWR_MIC4" />
         <ctl name="VA SMIC MUX1" value="SWR_MIC5" />
         <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
@@ -1374,16 +1375,16 @@
 
     <!-- These are the paths for PV tests -->
     <path name="speaker-up-pv">
-        <ctl name="aw_dev_1_switch" value="Disable" />
-        <ctl name="aw_dev_0_switch" value="Enable" />
-        <ctl name="aw_dev_0_prof" value="Music" />
-        <ctl name="aw_dev_0_monitor" value="Enable" />
-    </path>
-    <path name="speaker-down-pv">
         <ctl name="aw_dev_0_switch" value="Disable" />
         <ctl name="aw_dev_1_switch" value="Enable" />
         <ctl name="aw_dev_1_prof" value="Music" />
         <ctl name="aw_dev_1_monitor" value="Enable" />
+    </path>
+    <path name="speaker-down-pv">
+        <ctl name="aw_dev_1_switch" value="Disable" />
+        <ctl name="aw_dev_0_switch" value="Enable" />
+        <ctl name="aw_dev_0_prof" value="Music" />
+        <ctl name="aw_dev_0_monitor" value="Enable" />
     </path>
 
     <path name="speaker-up-pv-prot">
@@ -1408,7 +1409,6 @@
         <ctl name="aw_dev_0_switch" value="Disable" />
         <ctl name="aw_dev_1_switch" value="Disable" />
     </path>
-
     <path name="handset-tx-in-call-answermachine">
         <path name="voice-dmic-ef" />
         <ctl name="TX_DEC0 Volume" value="0" />
@@ -1431,7 +1431,6 @@
         <ctl name="aw_dev_1_switch" value="Disable" />
     </path>
 
-
     <path name="speaker-rx-in-call-answermachine-prot">
         <ctl name="aw_dev_0_switch" value="Disable" />
         <ctl name="aw_dev_1_switch" value="Disable" />
@@ -1440,5 +1439,10 @@
     <path name="speaker-tx-in-call-answermachine">
         <path name="speaker-mic" />
         <ctl name="TX_DEC2 Volume" value="0" />
+    </path>
+
+    <path name="game-mic">
+        <path name="amic4" />
+        <ctl name="ADC3 Volume" value="12" />
     </path>
 </mixer>

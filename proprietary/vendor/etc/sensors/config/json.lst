@@ -3,13 +3,9 @@ lanai_default_sensors.json
 lanai_dynamic_sensors.json
 lanai_dynamic_sensors_template.json
 lanai_fcal_ak991x_0.json
-lanai_hdk_ak991x_0.json
 lanai_irq.json
 lanai_mtp_ak991x_0.json
 lanai_power_0.json
-lanai_qrd_ak991x_0.json
-lanai_qrdv2_ak991x_0.json
-lanai_vertigo_ak991x_0.json
 qsh_camera_common.json
 qsh_camera_imx688_4.json
 qsh_camera_imx688_6.json
@@ -41,7 +37,6 @@ sns_facing.json
 sns_flight_md.json
 sns_fmv.json
 sns_fmv_legacy.json
-sns_geomag_rv.json
 sns_gyro_cal.json
 sns_heart_rate.json
 sns_mag_cal.json
@@ -65,9 +60,14 @@ qsh_ble.json
 lanai_qsh_ble_0.json
 lanai_stk3a7x_0.json
 lanai_lsm6dso_0.json
-lanai_stk3b6x_0.json
+lanai_stk501xx_0.json
+lanai_stk50153_0.json
 lanai_aw9610x_0.json
 lanai_aw96103_0_sar_register_a.json
 lanai_aw96103_0_sar_register_b.json
 lanai_aw96103_0_sar_register_c.json
+lanai_aw9610x_1.json
+lanai_aw96103_1_sar_register_a.json
+lanai_aw96103_1_sar_register_b.json
+lanai_aw96103_1_sar_register_c.json
 lanai_akmlib.json

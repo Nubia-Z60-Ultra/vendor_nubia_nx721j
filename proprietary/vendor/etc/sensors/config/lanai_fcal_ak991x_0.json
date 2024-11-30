@@ -11,32 +11,32 @@
         "owner": "sns_ak0991x",
         ".corr_mat":{
           "owner": "sns_ak0991x",
-          "0_0":{ "type": "flt", "ver": "0",
-            "data": "1.0283"
+          "0_0":{ "type": "flt", "ver": "2",
+            "data": "1.01495"
           },
-          "0_1":{ "type": "flt", "ver": "0",
-            "data": "-0.0168"
+          "0_1":{ "type": "flt", "ver": "2",
+            "data": "0.00158"
           },
-          "0_2":{ "type": "flt", "ver": "0",
-            "data": "-0.0311"
+          "0_2":{ "type": "flt", "ver": "2",
+            "data": "-0.07720"
           },
-          "1_0":{ "type": "flt", "ver": "0",
-            "data": "0.0266"
+          "1_0":{ "type": "flt", "ver": "2",
+            "data": "0.00006"
           },
-          "1_1":{ "type": "flt", "ver": "0",
-            "data": "1.0206"
+          "1_1":{ "type": "flt", "ver": "2",
+            "data": "1.02850"
           },
-          "1_2":{ "type": "flt", "ver": "0",
-            "data": "0.0152"
+          "1_2":{ "type": "flt", "ver": "2",
+            "data": "-0.11950"
           },
-          "2_0":{ "type": "flt", "ver": "0",
-            "data": "0.0207"
+          "2_0":{ "type": "flt", "ver": "2",
+            "data": "0.04779"
           },
-          "2_1":{ "type": "flt", "ver": "0",
-            "data": "-0.0084"
+          "2_1":{ "type": "flt", "ver": "2",
+            "data": "0.08319"
           },
-          "2_2":{ "type": "flt", "ver": "0",
-            "data": "1.0162"
+          "2_2":{ "type": "flt", "ver": "2",
+            "data": "0.94458"
           }
         },
         ".bias":{
@@ -56,32 +56,32 @@
         "owner": "sns_ak0991x",
         ".corr_mat":{
           "owner": "sns_ak0991x",
-          "0_0":{ "type": "flt", "ver": "0",
-            "data": "1.0283"
+          "0_0":{ "type": "flt", "ver": "1",
+            "data": "1.0"
           },
-          "0_1":{ "type": "flt", "ver": "0",
-            "data": "-0.0168"
+          "0_1":{ "type": "flt", "ver": "1",
+            "data": "-0.0"
           },
-          "0_2":{ "type": "flt", "ver": "0",
-            "data": "-0.0311"
+          "0_2":{ "type": "flt", "ver": "1",
+            "data": "-0.0"
           },
-          "1_0":{ "type": "flt", "ver": "0",
-            "data": "0.0266"
+          "1_0":{ "type": "flt", "ver": "1",
+            "data": "0.0"
           },
-          "1_1":{ "type": "flt", "ver": "0",
-            "data": "1.0206"
+          "1_1":{ "type": "flt", "ver": "1",
+            "data": "1.0"
           },
-          "1_2":{ "type": "flt", "ver": "0",
-            "data": "0.0152"
+          "1_2":{ "type": "flt", "ver": "1",
+            "data": "0.0"
           },
-          "2_0":{ "type": "flt", "ver": "0",
-            "data": "0.0207"
+          "2_0":{ "type": "flt", "ver": "1",
+            "data": "0.0"
           },
-          "2_1":{ "type": "flt", "ver": "0",
-            "data": "-0.0084"
+          "2_1":{ "type": "flt", "ver": "1",
+            "data": "-0.0"
           },
-          "2_2":{ "type": "flt", "ver": "0",
-            "data": "1.0162"
+          "2_2":{ "type": "flt", "ver": "1",
+            "data": "1.0"
           }
         },
         ".bias":{

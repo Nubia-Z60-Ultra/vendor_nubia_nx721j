@@ -7,14 +7,14 @@
     "owner": "sns_ak0991x",
     ".orient":{
       "owner": "sns_ak0991x",
-      "x":{ "type": "str", "ver": "1",
+      "x":{ "type": "str", "ver": "3",
         "data": "-y"
       },
-      "y":{ "type": "str", "ver": "1",
-        "data": "+x"
+      "y":{ "type": "str", "ver": "3",
+        "data": "-x"
       },
-      "z":{ "type": "str", "ver": "1",
-        "data": "+z"
+      "z":{ "type": "str", "ver": "2",
+        "data": "-z"
       }
     }
   }

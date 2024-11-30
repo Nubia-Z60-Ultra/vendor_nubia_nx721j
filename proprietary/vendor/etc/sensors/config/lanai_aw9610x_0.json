@@ -1,7 +1,7 @@
 {
   "config":{
     "hw_platform": ["MTP", "Surf", "RCM", "QRD", "HDK"],
-    "soc_id": ["557", "577"]
+    "soc_id": ["457", "482", "519", "557", "577"]
   },
   "aw9610x_0_platform":{
     "owner": "sns_aw9610x",
@@ -11,10 +11,10 @@
         "data": "0"
       },
       "bus_instance":{ "type": "int", "ver": "0",
-        "data": "9"
+        "data": "4"
       },
       "slave_config":{ "type": "int", "ver": "0",
-        "data": "19"
+        "data": "18"
       },
       "min_bus_speed_khz":{ "type": "int", "ver": "0",
         "data": "400"
@@ -26,7 +26,7 @@
         "data": "1"
       },
       "dri_irq_num":{ "type": "int", "ver": "0",
-        "data": "67"
+        "data": "112"
       },
       "irq_pull_type":{ "type": "int", "ver": "0",
         "data": "3"

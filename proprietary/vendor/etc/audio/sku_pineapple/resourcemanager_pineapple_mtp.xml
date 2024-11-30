@@ -142,6 +142,10 @@
             <ec_enable>0</ec_enable>
             <usecase>
                 <name>PAL_STREAM_LOW_LATENCY</name>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
+                </custom-config>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_DEEP_BUFFER</name>
@@ -171,6 +175,10 @@
                 <custom-config key="source_64">
                     <channels>1</channels>
                     <snd_device_name>handset-mic-source64</snd_device_name>
+                </custom-config>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
                 </custom-config>
             </usecase>
         <!--Uncomment these lines instead of above lines if needing to enable EC per custom key
@@ -207,6 +215,10 @@
                 <ec_enable>1</ec_enable>
                 <channels>2</channels>
                 <snd_device_name>handset-dmic-endfire</snd_device_name>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
+                </custom-config>
                <!-- incall music answermachine start -->
                 <custom-config key="in_call_answermachine">
                     <snd_device_name>handset-tx-in-call-answermachine</snd_device_name>
@@ -228,6 +240,10 @@
                 <custom-config key="quad-mic">
                     <channels>4</channels>
                     <snd_device_name>quad-mic</snd_device_name>
+                </custom-config>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
                 </custom-config>
                <!-- incall music answermachine start -->
                 <custom-config key="in_call_answermachine">
@@ -277,6 +293,10 @@
             <snd_device_name>speaker-mic</snd_device_name>
             <usecase>
                 <name>PAL_STREAM_LOW_LATENCY</name>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
+                </custom-config>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_DEEP_BUFFER</name>
@@ -298,6 +318,10 @@
                 <custom-config key="unprocessed-hdr-mic-inverted-portrait">
                     <channels>4</channels>
                     <snd_device_name>unprocessed-hdr-mic-inverted-portrait</snd_device_name>
+                </custom-config>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
                 </custom-config>
             </usecase>
         <!--Uncomment these lines instead of above lines if needing to enable EC per custom key
@@ -341,6 +365,10 @@
                     <channels>1</channels>
                     <snd_device_name>amic4</snd_device_name>
                 </custom-config>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
+                </custom-config>
                 <!-- incall music answermachine start-->
                 <custom-config key="in_call_answermachine">
                    <snd_device_name>speaker-tx-in-call-answermachine</snd_device_name>
@@ -361,6 +389,10 @@
                 <custom-config key="quad-mic">
                     <channels>4</channels>
                     <snd_device_name>quad-mic</snd_device_name>
+                </custom-config>
+                <custom-config key="game_mic">
+                    <channels>1</channels>
+                    <snd_device_name>game-mic</snd_device_name>
                 </custom-config>
                 <!-- incall music answermachine start-->
                 <custom-config key="in_call_answermachine">
@@ -836,11 +868,11 @@
           </usecase>
           <usecase>
                 <name>PAL_STREAM_LOW_LATENCY</name>
-                <!-- incall music answermachine start-->
-                <custom-config key="in_call_answermachine">
-                    <snd_device_name>handset-rx-in-call-answermachine</snd_device_name>
-                </custom-config>
-                <!-- incall music answermachine end-->
+              <!-- incall music answermachine start-->
+              <custom-config key="in_call_answermachine">
+                <snd_device_name>handset-rx-in-call-answermachine</snd_device_name>
+              </custom-config>
+              <!-- incall music answermachine end-->
           </usecase>
         </out-device>
         <out-device>
@@ -927,6 +959,19 @@
                <samplerate>48000</samplerate>
                <bit_width>16</bit_width>
            </usecase>
+         </out-device>
+        <out-device>
+            <id>PAL_DEVICE_OUT_AUX_LINE</id>
+            <back_end_name>CODEC_DMA-LPAIF_RXTX-RX-0</back_end_name>
+            <max_channels>2</max_channels>
+            <channels>2</channels>
+            <snd_device_name>color-light</snd_device_name>
+            <usecase>
+                <name>PAL_STREAM_ULTRA_LOW_LATENCY</name>
+                <custom-config key="aux_to_hp">
+                <snd_device_name>headphones</snd_device_name>
+                </custom-config>
+            </usecase>
          </out-device>
         <out-device>
             <id>PAL_DEVICE_OUT_BLUETOOTH_A2DP</id>
@@ -1661,14 +1706,14 @@
                 <param merge_first_stage_sound_models="false" />
                 <!--For now total 3 engines are supported, if more engine instances are needed,-->
                 <!-- do update acdb and usecaseKvManager.xml files by adding more instances    -->
-                <param pdk_first_stage_max_engine_count="3"/>
+                <param pdk_first_stage_max_engine_count="1"/>
                 <!-- Profile specific data which the algorithm can support -->
                 <param capture_keyword="2000" /> <!-- Default history buffer length -->
                 <param client_capture_read_delay="2000" /> <!-- reserved buffer duration for rt data -->
                 <param pre_roll_duration="500" /> <!-- Default preroll duration -->
                 <!-- durations in us -->
                 <param kw_start_tolerance="360000" />
-                <param kw_end_tolerance="180000" />
+                <param kw_end_tolerance="240000" />
                 <param data_before_kw_start="360000" />
                 <param data_after_kw_end="480000" />
                 <param sample_rate="16000" />
@@ -1676,9 +1721,9 @@
                 <!-- Module output channels -->
                 <param out_channels="1" />
                 <operating_modes>
-                    <low_power capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFNS" />
-                    <high_performance capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
-                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
+                    <low_power capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_RAW_LPI" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_RAW_LPI" />
+                    <high_performance capture_profile_handset="DUAL_MIC_48KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_FFECNS" />
+                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_48KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_FFECNS" />
                 </operating_modes>
                 <sound_model_info>
                     <first_stage_module_params>
@@ -1747,9 +1792,9 @@
                 <!-- Module output channels -->
                 <param out_channels="1" />
                 <operating_modes>
-                    <low_power capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFNS" />
-                    <high_performance capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
-                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
+                    <low_power capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_RAW_LPI" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_RAW_LPI" />
+                    <high_performance capture_profile_handset="DUAL_MIC_48KHZ_16BIT_RAW_NLPI" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_RAW_NLPI" />
+                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_48KHZ_16BIT_RAW_NLPI" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_RAW_NLPI" />
                 </operating_modes>
                 <sound_model_info>
                     <first_stage_module_params>
@@ -1766,75 +1811,35 @@
             <stream_config>
                 <name>CUSTOM_VOICE_UI</name>
                 <!-- NOTE: Customer need to replace with their own uuid and match with sound model -->
-                <param vendor_uuid="18ab2d40-e860-11e3-95ef-0002a5d5c51b" />
+                <param vendor_uuid="c51c508a-ee1b-11ec-8ea0-0242ac120002" />
+                <param interface_plugin_lib="libcustomva_intf.so" />
                 <param merge_first_stage_sound_models="false" />
                 <!-- Profile specific data which the algorithm can support -->
                 <param capture_keyword="2000" /> <!-- Default history buffer length -->
                 <param client_capture_read_delay="2000" /> <!-- reserved buffer duration for rt data -->
                 <param pre_roll_duration="500" /> <!-- Default preroll duration -->
                 <!-- durations in us -->
-                <param kw_start_tolerance="700000" />
-                <param kw_end_tolerance="600000" />
+                <param kw_start_tolerance="360000" />
+                <param kw_end_tolerance="240000" />
                 <param data_before_kw_start="360000" />
-                <param data_after_kw_end="1000000" />
+                <param data_after_kw_end="480000" />
                 <param sample_rate="16000" />
                 <param bit_width="16" />
                 <!-- Module output channels -->
                 <param out_channels="1" />
                 <operating_modes>
-                    <low_power capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFNS" />
-                    <high_performance capture_profile_handset="SINGLE_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
-                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_16KHZ_16BIT_FFECNS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_FFECNS" />
+                    <low_power capture_profile_handset="DUAL_MIC_16KHZ_16BIT_CUSTOM_NS" capture_profile_headset="SINGLE_MIC_16KHZ_16BIT_HEADSET_CUSTOM_NS" />
+                    <high_performance capture_profile_handset="DUAL_MIC_48KHZ_16BIT_CUSTOM_ECNS" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_CUSTOM_ECNS" />
+                    <high_performance_and_charging capture_profile_handset="DUAL_MIC_48KHZ_16BIT_CUSTOM_ECNS" capture_profile_headset="SINGLE_MIC_48KHZ_16BIT_HEADSET_CUSTOM_ECNS" />
                 </operating_modes>
                 <sound_model_info>
                     <first_stage_module_params>
-                        <param module_type="GMM" />
+                        <param module_type="CUSTOM1" />
                         <param load_sound_model_ids="0xC0000008, 0x0800104C" />
-                        <param wakeup_config_ids="0xC0000008, 0x08001049" />
+                        <param custom_config_ids="0xC0000008, 0x08001049" />
                         <param buffering_config_ids="0xC0000008, 0x08001044" />
                         <param engine_reset_ids="0xC0000008, 0x08001051" />
                     </first_stage_module_params>
-                    <first_stage_module_params>
-                        <param module_type="PDK" />
-                        <param load_sound_model_ids="0xC0000008, 0x0800124E" />
-                        <param unload_sound_model_ids="0xC0000008, 0x08001250" />
-                        <param wakeup_config_ids="0xC0000008, 0x08001049" />
-                        <param buffering_config_ids="0xC0000008, 0x0800124F" />
-                        <param engine_reset_ids="0xC0000008, 0x08001051" />
-                    </first_stage_module_params>
-                    <arm_ss_module_params>
-                        <!-- Options are "KEYWORD_DETECTION", "USER_VERIFICATION", "CUSTOM_DETECTION" -->
-                        <param sm_detection_type= "KEYWORD_DETECTION" />
-                        <param sm_id="0x2" />
-                        <param module_lib="libcapiv2svacnnvendor.so" />
-                        <param sample_rate="16000" />
-                        <param bit_width="16" />
-                        <param channel_count="1" />
-                    </arm_ss_module_params>
-                    <arm_ss_module_params>
-                        <param sm_detection_type= "USER_VERIFICATION" />
-                        <param sm_id="0x4" />
-                        <param module_lib="libcapiv2uvvendor.so" />
-                        <param sample_rate="16000" />
-                        <param bit_width="16" />
-                        <param channel_count="1" />
-                    </arm_ss_module_params>
-                    <arm_ss_module_params>
-                        <param sm_detection_type= "KEYWORD_DETECTION" />
-                        <param sm_id="0x8" />
-                        <param module_lib="libcapiv2svarnnvendor.so" />
-                        <param sample_rate="16000" />
-                        <param bit_width="16" />
-                        <param channel_count="1" />
-                    </arm_ss_module_params>
-                    <arm_ss_module_params>
-                        <param sm_detection_type= "KEYWORD_DETECTION" />
-                        <param sm_id="0x40" />
-                        <param module_lib="libcapiv2udk7vendor.so" />
-                        <param sample_rate="16000" />
-                        <param bit_width="16" />
-                        <param channel_count="1" />
-                    </arm_ss_module_params>
                 </sound_model_info>
             </stream_config>
         </vui_platform_info>
